@@ -59,23 +59,33 @@ class MainActivity : AppCompatActivity() {
                     topMargin = dip(8)
                 }
 
-                button("Show Snackbar"){
+                button("Show Snackbar") {
                     backgroundColor = ContextCompat.getColor(context, R.color.colorAccent)
                     textColor = Color.WHITE
                     onClick {
                         snackbar(name, "Hi, ${name.text}!")
                     }
-                }.lparams(width = matchParent){
+                }.lparams(width = matchParent) {
                     topMargin = dip(8)
                 }
 
-                button("Show Progress Bar"){
+                button("Show Progress Bar") {
                     backgroundColor = ContextCompat.getColor(context, R.color.colorAccent)
                     textColor = Color.WHITE
                     onClick {
                         indeterminateProgressDialog("Hello, ${name.text}! Please wait...").show()
                     }
-                }.lparams(width = matchParent){
+                }.lparams(width = matchParent) {
+                    topMargin = dip(8)
+                }
+
+                button("Go to Second Activity") {
+                    backgroundColor = ContextCompat.getColor(context, R.color.colorAccent)
+                    textColor = Color.WHITE
+                    onClick {
+                        startActivity<SecondActivity>("name" to "${name.text}")
+                    }
+                }.lparams(width = matchParent) {
                     topMargin = dip(8)
                 }
             }
